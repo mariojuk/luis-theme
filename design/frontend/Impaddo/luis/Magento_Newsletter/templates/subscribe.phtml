@@ -1,0 +1,47 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Newsletter\Block\Subscribe $block */
+
+?>
+<div class="newsletter-section full-width">
+    <div class="block newsletter">
+        <div class="title"><strong><?= $block->escapeHtml(__('Mehr Sehen. Mehr Wissen.')) ?></strong></div>
+        <div class="content">
+            <form class="form subscribe"
+                  novalidate
+                  action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+                  method="post"
+                  data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+                  id="newsletter-validate-detail">
+                <div class="field newsletter">
+                    <label class="label" for="newsletter"><span><?= $block->escapeHtml(__('E-Mail Adresse')) ?></span></label>
+                    <div class="control">
+                        <input name="email" type="email" id="newsletter"
+                               data-validate="{required:true, 'validate-email':true}"/>
+                        <div class="field choice">
+                            <input type="checkbox" id="newsletter-checkbox" value="1" name="newsletter-checkbox">
+                            <label for="newsletter-checkbox" class="label"><span><?= $block->escapeHtml(__('Ich akzeptiere die AGB und die Datenschutzerklärung*')) ?></span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="action subscribe primary" title="<?= $block->escapeHtmlAttr(__('Subscribe')) ?>" type="submit">
+                        <span><?= $block->escapeHtml(__('Subscribe')) ?></span>
+                    </button>
+                    <span>Jederzeit kostenlos stornieren</span>
+                </div>
+            </form>
+            <div class="content-text">
+                <p>
+                LUIS Newsletter abonnieren und <br>
+                10% Rabatt auf die erste Bestellung erhalten.</p>
+            </div>
+        </div>
+    </div>
+</div>

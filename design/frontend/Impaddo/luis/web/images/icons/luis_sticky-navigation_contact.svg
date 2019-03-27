@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>luis_sticky-navigation_contact</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-724.000000, -3471.000000)">
+            <g id="luis_sticky-navigation_contact" transform="translate(724.000000, 3471.000000)">
+                <g>
+                    <rect id="Rectangle-path" fill="#1F2A44" fill-rule="nonzero" x="0" y="0" width="40" height="40"></rect>
+                    <g id="Chat_Bubble_Dots_2x.png" transform="translate(8.000000, 9.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                        <path d="M12,0 C5.37,0 0,4.43 0,9.9 C0.0537938011,12.5876461 1.2996216,15.1122795 3.4,16.79 L2.18,22 L8.63,19.4 C9.73429556,19.6620218 10.8650507,19.7962361 12,19.8 C18.63,19.8 24,15.37 24,9.9 C24,4.43 18.63,0 12,0 Z M12,18.7 C10.9525601,18.6965758 9.90900593,18.5724231 8.89,18.33 C8.80361199,18.3201714 8.71638801,18.3201714 8.63,18.33 C8.49258622,18.3288998 8.35642032,18.356133 8.23,18.41 L3.72,20.22 L4.46,17.08 C4.54335115,16.6814322 4.40582159,16.2688435 4.1,16 C2.25613961,14.5249043 1.15812876,12.3105824 1.1,9.95 C1.1,5.1 6,1.15 12.01,1.15 C18.02,1.15 22.92,5.15 22.92,9.95 C22.92,14.75 18,18.7 12,18.7 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,91 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!--Remove blocks-->
+        <referenceBlock name="footer_links" remove="true"/> <!-- Default header links -->
+        <referenceBlock name="header" remove="true"/> <!-- Header Welcome Message -->
+        <referenceBlock name="advanced-search-link" remove="true"/> <!-- Advanced Search -->
+        <referenceBlock name="copyright" remove="true"/> <!-- Copyright -->
+
+        <!-- Header Content -->
+        <referenceContainer name="header.panel.wrapper">
+            <container name="header.top.links.wrapper" as="headerTopLinksWrapper" label="Header Top Links Wrapper" htmlTag="div" htmlClass="header-top-links-wrapper">
+                <block class="Magento\Cms\Block\Block" name="header-top-links">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">header-top-links</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+
+        <!-- Footer Content -->
+        <referenceContainer name="page.bottom.container">
+            <block class="Magento\Cms\Block\Block" name="footer-advantages">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-advantages</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="footer">
+            <container name="footer-links" as="footerLinks" label="Footer Links" htmlTag="div" htmlClass="footer-links" after="form.subscribe">
+                <block class="Magento\Cms\Block\Block" name="footer-links-1">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-links-1</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer-links-2">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-links-2</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer-links-3">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-links-3</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer-links-4">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-links-4</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer-contact">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-contact</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer-payment">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-payment</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+
+        <!-- Footer Bottom -->
+        <container name="footer-bottom" as="footerBottom" label="Footer Bottom" htmlTag="div" htmlClass="footer-bottom" after="footer">
+            <container name="footer-bottom-content" as="footerBottomContent" label="Footer Bottom Content" htmlTag="div" htmlClass="footer content">
+                <block class="Magento\Cms\Block\Block" name="footer-copyright">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-copyright</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer-social">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-social</argument>
+                    </arguments>
+                </block>
+            </container>
+        </container>
+
+        <referenceContainer name="page.top">
+            <referenceBlock name="store.links" remove="true" />
+        </referenceContainer>
+
+        <!-- Move Blocks -->
+        <move element="form.subscribe" destination="page.bottom.container" after="-"/> <!-- Newsletter > Page Bottom -->
+        <move element="authorization-link" destination="header-wrapper" before="top.search"/> <!-- Login Link > Header Wrapper -->
+        <move element="navigation.sections" destination="header-wrapper" after="-"/> <!-- Navigation > Header Content -->
+
+
+    </body>
+</page>

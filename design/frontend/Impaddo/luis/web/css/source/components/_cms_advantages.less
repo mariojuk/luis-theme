@@ -1,0 +1,59 @@
+//
+// Common
+// ___________________________________
+& when (@media-common = true) {
+    .cms-advantages {
+        .breadcrumbs {
+            display: none;
+        }
+        .homepage-image-cover {
+            background-color: @white;
+        }
+        .advantages-description {
+            .subtitle{
+                margin-bottom: 27px;
+            }
+        }
+        .top-features{
+            text-transform: none;
+            padding: 40px 0 100px 40px;
+        }
+    }
+}
+
+//
+// Mobile
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { // max 767
+
+}
+
+//
+// Tablet / Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { // min 768
+    .cms-advantages {
+        .advantages-description {
+            margin-top: 100px;
+            h2,
+            h4{
+                letter-spacing: 0.8px;
+                font-family: 'gotham book';
+            }
+            h4{
+                font-size: 20px;
+            }
+            p{
+                font-size: 16px;
+                letter-spacing: 0.2px;
+            }
+        }
+    }
+}
+
+//
+// Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) { // min 1024
+
+}

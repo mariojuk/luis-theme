@@ -1,0 +1,66 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Your %store_name order confirmation" store_name=$store.getFrontendName()}} @-->
+<!--@vars {
+"var formattedBillingAddress|raw":"Billing Address",
+"var order.getEmailCustomerNote()":"Email Order Note",
+"var order.increment_id":"Order Id",
+"layout handle=\"sales_email_order_items\" order=$order area=\"frontend\"":"Order Items Grid",
+"var payment_html|raw":"Payment Details",
+"var formattedShippingAddress|raw":"Shipping Address",
+"var order.getShippingDescription()":"Shipping Description",
+"var shipping_msg":"Shipping message"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-intro">
+        <td>
+            <p class="greeting">{{trans "Guten Tag %customer_name," customer_name=$order.getCustomerName()}}</p>
+        </td>
+    </tr>
+    <tr class="email-information">
+        <td>
+            {{layout handle="sales_email_order_items" order=$order area="frontend"}}
+            <table class="order-details">
+                <tr>
+                    <td class="address-details">
+                        <strong>{{trans "Billing Info"}}</strong>
+                        <p>{{var formattedBillingAddress|raw}}</p>
+                    </td>
+                    {{depend order.getIsNotVirtual()}}
+                    <td class="address-details">
+                        <strong>{{trans "Shipping Info"}}</strong>
+                        <p>{{var formattedShippingAddress|raw}}</p>
+                    </td>
+                    {{/depend}}
+                </tr>
+                <tr>
+                    <td class="method-info">
+                        <strong>{{trans "Payment Method"}}</strong>
+                        {{var payment_html|raw}}
+                    </td>
+                    {{depend order.getIsNotVirtual()}}
+                    <td class="method-info">
+                        <strong>{{trans "Shipping Method"}}</strong>
+                        <p>{{var order.getShippingDescription()}}</p>
+                        {{if shipping_msg}}
+                        <p>{{var shipping_msg}}</p>
+                        {{/if}}
+                    </td>
+                    {{/depend}}
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<p>Wenn Sie Fragen zu Ihrem Konto oder zu anderen Fragen haben, wenden Sie sich bitte an address@mail.com oder telefonisch unter {{trans '<a href="tel:%store_phone">%store_phone</a>' store_phone=$store_phone |raw}}.</p><br>
+<p>Danke nochmal!</p>
+
+{{template config_path="design/email/footer_template"}}

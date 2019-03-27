@@ -1,0 +1,51 @@
+//
+//  Usage Example
+//  _____________________________________________
+
+//
+//  Tablet
+//  ---------------------------------------------
+.media-width(@minBreak, @maxBreak) when (@minBreak = @screen__m) and (@maxBreak = @screen__l) { // 768 - 1023
+}
+
+//
+//  Custom Breakpoints
+//  ---------------------------------------------
+@screen__s2: 600px;
+
+//
+//  Style groups for 'mobile' devices
+//  ---------------------------------------------
+& when (@media-target = 'mobile'), (@media-target = 'all') {
+    @media only screen and (min-width: @screen__s) and (max-width: (@screen__m - 1)) {
+        .media-width(@screen__s, @screen__m);
+    }
+
+    @media only screen and (min-width: @screen__xs) and (max-width: (@screen__m - 1)) {
+        .media-width(@screen__xs, @screen__m);
+    }
+
+    @media all and (min-width: @screen__xs) {
+        .media-width('min', @screen__xs);
+    }
+
+    @media only screen and (min-width: @screen__s) and (max-width: (@screen__m - 1)) {
+        .media-width(@screen__s, @screen__m);
+    }
+}
+
+//
+//  Style groups for 'desktop' devices
+//  ---------------------------------------------
+
+& when (@media-target = 'desktop'), (@media-target = 'all') {
+    @media all and (min-width: @screen__m) and (max-width: (@screen__l - 1)),
+    print {
+        .media-width(@screen__m, @screen__l);
+    }
+
+    @media all and (min-width: @screen__s2),
+    print {
+        .media-width('min', @screen__s2);
+    }
+}

@@ -1,0 +1,376 @@
+//
+// Common
+// ___________________________________
+& when (@media-common = true) {
+    .cms-product-finder {
+        .page-title {
+            text-transform: uppercase;
+        }
+
+        .column.main {
+            min-height: 500px;
+        }
+
+        .breadcrumbs {
+            margin-top: 20px;
+        }
+    }
+
+    #product-finder {
+        position: relative;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+
+        .branches-widget {
+            input {
+                display: none;
+            }
+        }
+
+        .pf-loader {
+            background: @color-white;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: all 0.4s ease-out;
+            opacity: 1;
+
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    .product-finder-wrapper {
+        .form-steps {
+            list-style-type: none;
+            padding-left: 0;
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-wrap(wrap);
+
+            > li {
+                overflow: hidden;
+                z-index: 1;
+            }
+
+            li {
+                &.active {
+                    .form-steps-item-content {
+                        background: @blue__main;
+
+                        &:before {
+                            background: @blue__main;
+                        }
+                    }
+                }
+            }
+        }
+
+        .form-steps-item {
+            display: inline-block;
+            text-align: right;
+
+            &-content {
+                background: @gray__secondary;
+                border-radius: 50%;
+                color: @color-white;
+                display: inline-block;
+                position: relative;
+                z-index: 10;
+
+                &:before {
+                    z-index: 0;
+                    width: 100%;
+                }
+            }
+
+            &-icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .tab-info {
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-wrap(wrap);
+            .flex-space-around();
+        }
+
+        .actions-primary {
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-wrap(wrap);
+            margin-left: 20px;
+            margin-right: 20px;
+            text-align: center;
+        }
+    }
+
+    //
+    //  Checkbox Group
+    //  ---------------------------------------------
+    .tab-checkbox-group {
+        display: inline-block;
+        margin-top: 40px;
+
+        &-vertical {
+            vertical-align: top;
+
+            .checkbox-label {
+                display: block !important;
+                margin-bottom: 20px !important;
+            }
+        }
+
+        .checkbox-label {
+            display: inline-block;
+            font-size: 16px;
+            font-family: @font-family__gotham__book;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            > span:not(.checkmark) {
+                display: block;
+                text-transform: capitalize;
+                line-height: 1.4;
+                padding: 10px 0 0;
+            }
+
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+
+                &[checked="checked"] ~ .checkmark:after {
+                    display: block;
+                }
+
+                &[checked="checked"] ~ .checkmark {
+                    background-color: @blue__main;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: 7px;
+                        top: 3px;
+                        width: 4px;
+                        height: 10px;
+                        border: solid white;
+                        border-width: 0 2px 2px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: transparent;
+            border: 1px solid @blue__main;
+        }
+    }
+}
+
+//
+// Mobile
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { // max 767
+    .product-finder-wrapper {
+        .tab-heading {
+            font-family: "gotham bold";
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .tab-subheading {
+            font-size: 16px;
+            line-height: 24px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 30px;
+        }
+
+        .form-steps-item {
+            width: 40px;
+        }
+
+        .form-steps-item-content {
+            font-size: 14px;
+            height: 25px;
+            width: 25px;
+
+            &:before {
+                background: @gray__secondary;
+                content: '';
+                height: 3px;
+                position: absolute;
+                right: 24px;
+                top: 11.5px;
+                width: 25px;
+                z-index: 1;
+            }
+        }
+
+        .tab-checkbox-group {
+            margin-top: 0;
+
+            &-vertical:not(:last-of-type) {
+                margin-bottom: 30px;
+            }
+
+            .checkbox-label {
+                display: block;
+            }
+        }
+
+        .actions-primary {
+            .lib-vendor-prefix-flex-direction(column);
+            margin-top: 60px;
+            margin-bottom: 80px;
+
+            .btn-custom {
+                max-width: 250px;
+                margin: 0 auto;
+                width: 80%;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
+
+//
+// Tablet / Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { // min 768
+    #product-finder {
+        .branches-widget {
+            padding: 80px 0 110px;
+
+            &-wrapper {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        .tab-heading {
+            font-family: @font-family__gotham__bold;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .tab-subheading {
+            font-size: 24px;
+        }
+
+        .pager.wizard {
+            margin-bottom: 230px;
+        }
+
+        .tab-info {
+            &-image {
+                width: 22%;
+            }
+
+            &-text {
+                width: 75%;
+                padding-left: 3%;
+                position: relative;
+
+                p {
+                    font-size: 16px;
+                    line-height: 24px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        .actions-primary {
+            margin-bottom: 110px;
+
+            .btn-custom {
+                font-size: 16px;
+                min-width: 140px;
+            }
+
+            #countBtn {
+                margin-left: auto;
+                margin-right: 20px;
+            }
+        }
+    }
+
+    .product-finder-wrapper {
+        .form-steps-item {
+            width: 110px;
+        }
+
+        .form-steps-item-content {
+            height: 30px;
+            width: 30px;
+            font-size: 20px;
+
+            &:before {
+                background: @gray__secondary;
+                content: '';
+                height: 3px;
+                position: absolute;
+                right: 28px;
+                top: 13.5px;
+                width: 85px;
+                z-index: 1;
+            }
+        }
+    }
+
+    .ui-tabs-panel {
+        .tab-checkbox-group {
+            margin-top: 40px;
+            margin-bottom: 80px;
+
+            .checkbox-label:not(:last-of-type) {
+                margin-right: 50px;
+            }
+        }
+    }
+
+}
+
+//
+// Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) { // min 1024
+    #product-finder {
+        .actions-primary {
+            .btn-custom {
+                min-width: 180px;
+            }
+        }
+    }
+}

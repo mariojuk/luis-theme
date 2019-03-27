@@ -1,0 +1,77 @@
+//
+// Common
+// ___________________________________
+& when (@media-common = true) {}
+.cms-contact {
+    .btn-custom {
+        float: right;
+        margin: 0 10px;
+        min-width: 195px;
+        padding: 7px;
+    }
+}
+
+.contact {
+    .fieldset {
+        > .field.name {
+            width: 49.5%;
+            display: inline-block;
+            &.first-name {
+                margin-right: 1%;
+            }
+        }
+    }
+}
+
+.contact-sections {
+    .lib-vendor-prefix-display(flex);
+    justify-content: space-between;
+    margin-bottom: 130px;
+    img {
+        width: 250px;
+        object-fit: cover;
+        height: 250px;
+        margin-bottom: 20px;
+    }
+    h4 {
+        text-transform: uppercase;
+    }
+    span {
+        display: block;
+
+        &::before {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            content: '';
+        }
+        &.contact-tel::before {
+            background: url("../../web/images/icons/Phone.svg") no-repeat center;
+        }
+        &.contact-email::before {
+            background: url("../../web/images/icons/email.svg") no-repeat center;
+        }
+    }
+
+}
+
+//
+// Mobile
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { // max 767
+
+}
+
+//
+// Tablet / Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { // min 768
+
+}
+
+//
+// Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) { // min 1024
+
+}

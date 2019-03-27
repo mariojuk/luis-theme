@@ -1,0 +1,61 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_Blog
+ * @copyright   Copyright (c) 2018 Mageplaza (http://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+
+/** @var \Mageplaza\Blog\Block\Widget\Posts $block */
+
+$posts = $block->getCollection();
+?>
+
+<div class="news-widget-wrapper full-width">
+    <div class="news-widget-content">
+        <div class="post-list-container mpcss" id="mpblog-list-container">
+            <div class="widget-title">
+                <?php echo $block->getTitle(); ?>
+            </div>
+            <div class="flex-container">
+                <?php foreach ($posts as $post) : ?>
+                    <div class="post-list-item col-sm-4 col-xs-4">
+                        <div class="post-item-wraper">
+                            <img class="news-icon" src="<?php echo $this->getViewFileUrl('images/icons/triangle.png'); ?>" alt="">
+                            <h4 class="mp-post-title">
+                                <a class="post-link-title" title="<?php echo $post->getName(); ?>"
+                                   href="<?php echo $post->getUrl() ?>">
+                                    <?php echo $post->getName(); ?>
+                                </a>
+                            </h4>
+                            <?php if ($post->getImage()) : ?>
+                                <div class="post-image" style="background-image: url('<?php echo $block->resizeImage($post->getImage(), '400x'); ?>')">
+                                    <a href="<?php echo $post->getUrl() ?>">
+                                    </a>
+                                </div>
+                            <?php endif; ?>
+                            <div class="post-info-wraper">
+                                <div class="post-short-description">
+                                    <p><?php echo $post->getShortDescription(); ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</div>

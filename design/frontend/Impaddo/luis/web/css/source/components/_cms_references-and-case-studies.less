@@ -1,0 +1,126 @@
+//
+// Common
+// ___________________________________
+& when (@media-common = true) {
+    .cms-referenzen {
+        .homepage-image-cover {
+            background-color: @white;
+        }
+
+        .breadcrumbs {
+            display: none;
+        }
+
+        .image-list {
+            .lib-vendor-prefix-display(flex);
+            .flex-wrap();
+            padding: 40px 0 0 30px;
+            margin-bottom: 120px;
+            img {
+                margin: auto 0;
+                padding:0px 20px 30px 0px;
+            }
+        }
+        #horizontal_tabs {
+            margin-top: 26px;
+            .ui-tabs-nav {
+                .lib-vendor-prefix-display(flex);
+                .flex-space-between();
+                .flex-align-items-center();
+                list-style-type: none;
+                padding: 0;
+                .ui-tabs-active {
+                    .lib-vendor-prefix-display(flex);
+                    .flex-justify-content-center();
+                    .flex-align-items-center();
+                    width: 25%;
+                    height: 82px;
+                    border-top: 1px solid #979797;
+                    border-right: 1px solid #979797;
+                    border-bottom: none !important;
+                    text-transform: uppercase;
+                }
+                .ui-state-default {
+                    .lib-vendor-prefix-display(flex);
+                    .flex-justify-content-center();
+                    .flex-align-items-center();
+                    width: 25%;
+                    height: 82px;
+                    border-bottom: 1px solid #979797;
+                }
+            }
+            .ui-tabs-panel {
+                .image-box {
+                    .lib-vendor-prefix-display(flex);
+                    .flex-space-between();
+                    margin-top: 80px;
+                    img{
+                        max-width: 300px;
+                        max-height: 240px;
+                    }
+                }
+            }
+            .tab-description {
+                .lib-vendor-prefix-display(flex);
+                .flex-space-between();
+
+                .top-features {
+                    width: 45%;
+                    text-transform: none;
+                    .top-features-title {
+                        font-size: 20px;
+                        letter-spacing: 0.6px;
+                        margin: 60px 0 38px 0;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+// Mobile
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { // max 767
+
+}
+
+//
+// Tablet / Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { // min 768
+    .cms-references-and-case-studies {
+        .title,
+        .description,
+        .subtitle {
+            h2,
+            h4{
+                font-family: 'gotham book';
+            }
+        }
+        .title {
+            letter-spacing: 0.8px;
+            margin-bottom: 20px;
+        }
+        .description,
+        .subtitle {
+            letter-spacing: 0.3px;
+        }
+        .subtitle {
+            margin-bottom: 60px;
+        }
+        .description {
+            margin-left: 8px;
+            text-transform:uppercase;
+        }
+    }
+
+}
+
+//
+// Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) { // min 1024
+
+}

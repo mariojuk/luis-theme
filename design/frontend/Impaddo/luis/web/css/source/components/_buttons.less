@@ -1,0 +1,91 @@
+//
+// Common
+// ___________________________________
+& when (@media-common = true) {
+    .actions-toolbar {
+        > .primary,
+        > .secondary {
+            .action {
+                width: auto;
+            }
+        }
+    }
+
+    .btn-custom {
+        background: @blue__main;
+        color: @color-white;
+        display: inline-block;
+        font-family: @font-family__bold;
+        padding: 12px 35px;
+        text-transform: uppercase;
+        -webkit-transform: skew(-30deg);
+        -ms-transform: skew(-30deg);
+        transform: skew(-30deg);
+
+        &-small {
+            padding: 6px 24px;
+        }
+
+        > span {
+            display: inline-block;
+            -webkit-transform: skew(30deg);
+            -ms-transform: skew(30deg);
+            transform: skew(30deg);
+        }
+
+        &:hover {
+            background: @orange__main;
+            color: @color-white;
+        }
+
+        &.orange {
+            background: @orange__main;
+            color: @color-white;
+            border-color: @orange__main;
+        }
+    }
+
+    .btn-custom[disabled="disabled"],
+    .btn-custom[disabled="disabled"]:hover {
+        background: @gray__secondary !important;
+        color: @blue__main !important;
+        cursor: not-allowed;
+    }
+
+    .orange-btn {
+        background: @orange__btn;
+        border-color: @orange__main;
+        width: 195px;
+        max-width: 100%;
+        padding: 7px;
+        text-align: center;
+        &:focus, &:hover, &:active {
+            background: @blue__main;
+            color: @color-white;
+        }
+    }
+}
+
+//
+// Mobile
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { // max 767
+
+}
+
+//
+// Tablet / Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { // min 768
+    .btn-custom.orange:hover {
+        background: @blue__main;
+        color: @color-white;
+    }
+}
+
+//
+// Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) { // min 1024
+
+}

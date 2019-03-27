@@ -1,0 +1,184 @@
+//
+// Common
+// ___________________________________
+& when (@media-common = true) {
+    .branches-widget {
+        background: @color-white;
+        text-align: center;
+
+        h3 {
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        &-content {
+            .lib-vendor-prefix-display(flex);
+            .flex-space-between();
+            .flex-wrap();
+        }
+    }
+
+
+    .branche-single {
+        .lib-vendor-prefix-display(flex);
+        .flex-space-between();
+        box-sizing: border-box;
+        background: @gray__main;
+        color: @color-black;
+        font-family: @font-family__gotham__bold;
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+
+        &-text {
+            text-align: left;
+            box-sizing: border-box;
+            font-family: @font-family__gotham__bold;
+            font-size: 24px;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+
+            span {
+                font-family: @font-family__gotham__book;
+                margin-right: 26px;
+            }
+        }
+
+        &-image {
+            .lib-vendor-prefix-display(flex);
+            .flex-justify-content-center();
+            .flex-align-items();
+        }
+
+        &.active {
+            background: @orange__main;
+            color: @color-white;
+
+            .branche-single-image svg path {
+                fill: @color-white;
+            }
+        }
+    }
+}
+
+//
+// Mobile
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { // max 767
+
+    .branches-widget {
+        &-wrapper {
+            padding: 0;
+
+            h3 {
+                font-size: 25px;
+                padding-top: 40px;
+                margin-bottom: 40px;
+            }
+        }
+
+        &-content {
+            padding-left: 20px;
+            padding-right: 20px;
+
+            .lib-vendor-prefix-flex-direction(column);
+
+            .branche-single-text {
+                box-sizing: border-box;
+                font-size: 18px;
+                padding: 28px 0 28px 10px;
+
+                span {
+                    margin-right: 10px;
+                }
+            }
+
+            .branche-single-image {
+                width: 25%;
+
+                svg {
+                    height: 25px;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+}
+
+//
+// Tablet
+// ___________________________________
+.media-width(@minBreak, @maxBreak) when (@minBreak = @screen__m) and (@maxBreak = @screen__l) { // 768 - 1023
+    .branches-widget-wrapper {
+        .branche-single-text {
+            font-size: 20px;
+            padding: 36px 0 36px 20px;
+
+            span {
+                margin-right: 15px;
+            }
+        }
+
+        .branche-single-image {
+            svg {
+                height: 35px;
+                width: auto;
+            }
+        }
+    }
+}
+
+//
+// Tablet / Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { // min 768
+    .branches-widget {
+        padding: 110px 0 150px;
+
+        h3 {
+            font-size: 35px;
+            margin-bottom: 80px;
+        }
+
+        &-wrapper {
+            .container-mixin();
+
+            .branche-single {
+                cursor: pointer;
+                width: 49%;
+
+                &-text {
+                    width: 70%;
+                }
+
+                &-image {
+                    width: 30%;
+                }
+
+                &:hover,
+                &.active {
+                    background: @orange__main;
+                    color: @color-white;
+
+                    .branche-single-text {
+                        padding: 36px 0 36px 5%;
+                    }
+
+                    .branche-single-image svg path {
+                        fill: @color-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+// Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) { // min 1024
+    .branche-single-text {
+        padding: 36px 0 36px 10%;
+    }
+}

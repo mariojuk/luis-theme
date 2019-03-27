@@ -1,0 +1,69 @@
+<?php
+/**
+ * Job listing
+ */
+
+?>
+
+<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('jobs-large-image')->toHtml();?>
+
+<div class="job-list">
+    <h2><?php echo __('Job Offers'); ?></h2>
+    <table>
+        <thead>
+        <tr>
+            <th colspan="2"><?php echo __('job'); ?></th>
+            <th><?php echo __('published'); ?></th>
+            <th><?php echo __('status');  ?></th>
+        </tr>
+        </thead>
+        <?php if (count($block->getJobs()) > 0) : ?>
+            <?php foreach ($block->getJobs() as $job):?>
+
+                <tbody>
+
+                <tr>
+                    <td colspan="2"><div class="styleBold"><a href="<?php echo $block->getURL(); ?>job/index/detail/id/<?php echo $job->getID(); ?>"><?php echo $job->getPosition(); ?></a></div></td>
+                    <td><div class="styleBold"><?php echo date('d.m.Y', strtotime($job->getCreatedAt())); ?></div></td>
+                    <td><div><?php echo $job->getStatus(); ?></div></td>
+                </tr>
+                <tr>
+                    <td class="tdLocation"><?php echo $job->getLocation(); ?></td>
+                    <td class="tdTime"></td>
+                    <td class="tdJob"><?php echo $job->getEducation(); ?></td>
+                    <td class="tdView"><a href="<?php echo $block->getURL(); ?>job/index/detail/id/<?php echo $job->getID(); ?>"><?php echo __('VIEW'); ?> ></a></td>
+                </tr>
+
+
+                </tbody>
+
+            <?php endforeach; ?>
+        <?php else: ?>
+            <tbody>
+            <tr><td><?php echo __("No jobs posting for now. Please check back later");?></td></tr>
+            </tbody>
+        <?php endif; ?>
+    </table>
+    <?php if (!$block->isAjaxPaginationEnabled()): ?>
+        <div><?php echo $block->getPagerHtml(); ?></div>
+    <?php elseif ($block->getTotalPageNo() >= 2): ?>
+        <div class="no-ajax">
+            <button id="load-more" class="load-more-no-ajax">Load More</button>
+        </div>
+        <!-- For Ajax Pagination-->
+        <script type="text/x-magento-init">
+            {
+                "body" : {
+                     "ajaxLoadingJobManager":
+                            {
+                                "currentPage": "<?php echo $block->getCurrentPage(); ?>",
+                                "totalPages" : "<?php echo $block->getTotalPageNo(); ?>",
+                                "url": "<?php echo $this->getUrl('job') . "?p=";?>"
+                            }
+                }
+            }
+        </script>
+
+    <?php endif ?>
+</div>
+

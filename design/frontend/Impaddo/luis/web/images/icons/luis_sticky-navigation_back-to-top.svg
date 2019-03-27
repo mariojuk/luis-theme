@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>luis_sticky-navigation_back-to-top</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-724.000000, -3432.000000)">
+            <g id="luis_sticky-navigation_back-to-top" transform="translate(724.000000, 3432.000000)">
+                <g>
+                    <rect id="Rectangle-path" fill="#FF7500" fill-rule="nonzero" x="0" y="0" width="40" height="40"></rect>
+                    <path d="M10.72,25 C10.8796993,24.9998821 11.0333942,24.939119 11.15,24.83 L20,16.44 L28.85,24.82 C28.9618537,24.9374939 29.1178014,25.0027743 29.28,25 C29.5077402,24.9822138 29.7064566,24.8386754 29.7949135,24.6280637 C29.8833704,24.4174519 29.8467412,24.1750684 29.7,24 L20.43,15.22 C20.3254722,15.0876336 20.1685031,15.0073238 20,15 C19.8399114,14.9980421 19.6854704,15.0591002 19.57,15.17 L10.29,24 C10.142515,24.1764639 10.1068141,24.4208783 10.1976631,24.6321549 C10.288512,24.8434315 10.4904667,24.985654 10.72,25" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

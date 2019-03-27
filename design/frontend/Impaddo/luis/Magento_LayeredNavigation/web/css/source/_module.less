@@ -1,0 +1,187 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    .block.filter {
+        margin: 20px 0;
+
+        .filter-title {
+            margin-bottom: @indent__base;
+
+            strong {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .block-subtitle {
+        display: inline-block;
+        font-size: 16px;
+        margin-bottom: @indent__s;
+    }
+
+    .filter-current {
+
+        .filter-label {
+            display: block;
+            font-size: 16px;
+
+            &:after {
+                content: ':';
+            }
+        }
+
+        + .filter-actions {
+            margin-bottom: @indent__l;
+
+            .filter-clear {
+                color: @orange__main;
+                &:hover, &:focus {
+                    color: @dark;
+                }
+            }
+        }
+
+        .action.remove {
+            float: left;
+            margin-right: 5px;
+            padding: 0 5px;
+            font-size: 16px;
+            line-height: normal;
+        }
+    }
+
+    .filter-options-content {
+        .filter-count-label {
+            &:extend(.abs-visually-hidden all);
+        }
+    }
+
+    .filter-options {
+        margin: 0;
+
+        .filter-options-title {
+            padding-top: 20px;
+            border-top: 1px solid @gray__secondary;
+            word-break: break-all;
+            font-weight: 400;
+            font-size: 16px;
+            cursor: pointer;
+            &:first-of-type {
+                border-top: none;
+                padding-top: 0;
+            }
+            &:after {
+                display: inline-block;
+                float: right;
+                margin-right: 15px;
+                content: '';
+                width: 20px;
+                height: 20px;
+                background: url("../images/icons/luis-menu-arrow-dropdown-language.svg") no-repeat center/15px;
+                transform: rotate(-90deg);
+                transition: all 0.5s ease;
+            }
+            &.active-filter {
+                &:after {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
+        .filter-options-content {
+            font-size: 16px;
+            margin: 20px 0;
+
+            .item {
+                margin-bottom: 3px;
+                .checkbox label::before {
+                    background-color: #dadada;
+                    border: none;
+                    border-radius: 0;
+                }
+                .checkbox input[type="checkbox"]:checked+label::after,
+                .checkbox input[type="radio"]:checked+label::after {
+                    border-radius: 0;
+                    top: 4px;
+                    left: 3px;
+                    background: #1F2A44;
+                }
+            }
+            &:last-of-type {
+                padding-bottom: 20px;
+                border-bottom: 1px solid @gray__secondary;
+            }
+        }
+
+        .count {
+            .lib-css(color, @text__color__muted);
+
+            &:before {
+                content: '(';
+            }
+
+            &:after {
+                content: ')';
+            }
+        }
+    }
+
+    .items {
+        &:extend(.abs-reset-list all);
+    }
+
+    .filtered {
+        .items {
+            margin: 15px 0;
+        }
+
+        .item {
+            margin-bottom: 6px;
+            padding-left: 22px;
+            position: relative;
+
+            .label {
+                font-weight: @font-weight__bold;
+            }
+
+            .action.remove {
+                &:extend(.abs-remove-button-for-blocks all);
+                left: -6px;
+                position: absolute;
+                top: 0;
+            }
+        }
+
+        & + .actions {
+            margin-bottom: 35px;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .block.filter {
+        margin: 85px 0 40px;
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-with-filter {
+        .columns {
+            .sidebar-main {
+                .lib-vendor-prefix-order(0);
+            }
+        }
+    }
+}

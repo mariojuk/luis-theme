@@ -1,0 +1,103 @@
+//
+// Common
+// ___________________________________
+& when (@media-common = true) {
+    .cms-qualitatspolitik {
+        .breadcrumbs{
+            display: none;
+        }
+        .title{
+            font: 600 2.8rem @font-family__gotham__book;
+            letter-spacing: 0.8px;
+            margin: 100px 0 28px 0;
+        }
+
+        .quality-policy-main{
+            .lib-vendor-prefix-display(flex);
+            .flex-space-between();
+            margin: 40px 0;
+
+            .small-img,
+            .mid-img,
+            .big-img{
+                .align-self-flex-end();
+                margin-bottom: 25px;
+            }
+
+            .top-features{
+                text-transform: none;
+
+                .top-features-list-title{
+                    margin: 0 0 20px 30px;
+                    font-size: 16px;
+                }
+
+                .icon-circle {
+                    list-style: none;
+                    margin-left: -20px;
+
+                    &:before{
+                        content: "• ";
+                        color: black;
+                        font-size: 30px;
+                        top: 10px;
+                        left: -35px;
+                        line-height: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+// Mobile
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { // max 767
+    .quality-policy-main{
+        .lib-vendor-prefix-flex-direction(column);
+        .small-img{
+            width: 18%;
+        }
+        .mid-img{
+            width: 100%;
+
+        }
+        .big-img{
+            width: 100%;
+        }
+
+        .top-features{
+            width: 100%;
+        }
+    }
+}
+
+//
+// Tablet / Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { // min 768
+    .quality-policy-main{
+        .small-img{
+            width: 8%;
+        }
+        .mid-img{
+            width: 40%;
+
+        }
+        .big-img{
+            width: 58%;
+        }
+
+        .top-features{
+            width: 40%;
+        }
+    }
+}
+
+//
+// Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) { // min 1024
+
+}

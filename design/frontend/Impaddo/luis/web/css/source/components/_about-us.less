@@ -1,0 +1,214 @@
+//
+// Common
+// ___________________________________
+& when (@media-common = true) {
+    .cms-uber-luis {
+        .homepage-large-image-wrapper {
+            margin-bottom: 20px;
+        }
+        .title {
+            font: 600 2.8rem @font-family__gotham__book;
+            letter-spacing: 0.8px;
+            margin: 0 0 30px 0;
+        }
+        .description{
+            letter-spacing: 0.2px;
+        }
+        .subtitle{
+            font: normal 20px @font-family__gotham__book;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+    }
+
+    // Map
+
+    .map-wrapper {
+        position: relative;
+        overflow: hidden;
+        .map-img {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .marker {
+            position: absolute;
+            cursor: pointer;
+            width: 15px;
+            height: auto;
+        }
+        .map-info {
+            display: none;
+            box-sizing: border-box;
+            padding: 40px;
+            background: @gray__main;
+            color: @orange__main;
+            span, a {
+                font-size: 16px;
+            }
+            a {
+                color: @orange__main;
+                &:hover, &:focus {
+                    color: @blue__main;
+                }
+            }
+            .map-info-heading {
+                display: block;
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+            .marker-tel, .marker-email {
+                &::before {
+                    display: inline-block;
+                    width: 14px;
+                    height: 14px;
+                    margin-right: 10px;
+                    content: '';
+                }
+            }
+            .marker-tel {
+                display: inline-block;
+                margin: 20px 0 10px;
+                &::before {
+                    background: url("../images/icons/Phone.svg") no-repeat center/14px;
+                    background-size: 14px;
+                }
+            }
+            .marker-email::before {
+                background: url("../images/icons/email.svg") no-repeat center/14px;
+            }
+        }
+    }
+
+}
+
+//
+// Mobile
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { // max 767
+    .map-wrapper {
+        #map {
+            display: none;
+        }
+        .map-sm {
+            display: block !important;
+        }
+        .map-info {
+            margin-top: 30px;
+            height: auto;
+            padding: 20px;
+        }
+        .marker {
+            &-1 {
+                top: 44.8%;
+                right: 52.6%;
+            }
+            &-2 {
+                top: 56%;
+                right: 51%;
+            }
+            &-3 {
+                top: 50%;
+                right: 62.1%;
+            }
+            &-4 {
+                top: 49.5%;
+                left: 23.8%;
+            }
+            &-5 {
+                left: 34%;
+                bottom: 29.3%;
+            }
+            &-6 {
+                bottom: 28%;
+                left: 43.6%;
+            }
+            &-7 {
+                bottom: 16%;
+                left: 25.7%;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .map-wrapper {
+        .map-img .marker {
+            &-4 {
+                top: 47.5%;
+                left: 22.8%;
+            }
+            &-7 {
+                bottom: 16%;
+                left: 24.7%;
+            }
+        }
+    }
+}
+
+//
+// Tablet / Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { // min 768
+    .cms-uber-luis {
+        .branches-widget-wrapper {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .map-wrapper {
+        .marker {
+            &-1 {
+                top: 51.6%;
+                right: 55%;
+            }
+            &-2 {
+                top: 61%;
+                right: 54%;
+            }
+            &-3 {
+                top: 55.5%;
+                right: 60.6%;
+            }
+            &-4 {
+                top: 55.5%;
+                left: 29.5%;
+            }
+            &-5 {
+                left: 36%;
+                bottom: 26%;
+            }
+            &-6 {
+                bottom: 25.5%;
+                left: 42.3%;
+            }
+            &-7 {
+                bottom: 15.8%;
+                left: 31.2%;
+            }
+        }
+    }
+}
+
+//
+// Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) { // min 1024
+    .map-wrapper {
+        .lib-vendor-prefix-display(flex);
+        margin: 100px 0;
+        .map-img {
+            width: 70%;
+        }
+        .map-info {
+            width: 30%;
+            height: 315px;
+        }
+    }
+    .cms-uber-luis {
+        .homepage-large-image-wrapper {
+            margin-bottom: 100px;
+        }
+    }
+}

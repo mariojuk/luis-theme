@@ -1,0 +1,120 @@
+//
+// Common
+// ___________________________________
+& when (@media-common = true) {
+    .downloads-wrapper {
+        .downloads-single {
+            .lib-vendor-prefix-display(flex);
+            background: @gray__main;
+            margin-bottom: 20px;
+
+            &-text {
+                font-family: "gotham bold";
+            }
+
+            &-link {
+                .icon-right-open {
+                    color: @orange__main;
+                }
+            }
+        }
+    }
+
+    .sidebar-contact {
+        h3 {
+            text-transform: uppercase;
+            font-family: "gotham bold";
+            font-size: 16px;
+            line-height: 30px;
+            margin-bottom: 20px;
+        }
+
+        address p {
+            position: relative;
+            margin-bottom: 10px;
+
+            img {
+                position: absolute;
+                left: -30px;
+                top: 4px;
+            }
+        }
+    }
+}
+
+//
+// Mobile
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { // max 767
+    .downloads-wrapper {
+        .downloads-single {
+            .lib-vendor-prefix-flex-direction(column);
+            padding: 20px;
+        }
+    }
+
+    .cms-downloads {
+        .flex-container {
+            .lib-vendor-prefix-flex-direction(column);
+        }
+    }
+}
+
+//
+// Tablet / Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { // min 768
+    .downloads-wrapper {
+        width: 66%;
+
+        .downloads-single {
+            .lib-vendor-prefix-flex-direction(row);
+            padding: 60px;
+
+            &-image,
+            &-text,
+            &-link {
+                .lib-vendor-prefix-display(flex);
+                .flex-align-items(center);
+            }
+
+            &-image {
+                width: 20%;
+            }
+
+            &-text {
+                width: 30%;
+                margin-left: 10%;
+
+                p {
+                    margin-bottom: 0;
+                }
+            }
+
+            &-link {
+                font-size: 16px;
+                width: 40%;
+                -webkit-box-pack: end;
+                -ms-flex-pack: end;
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    .sidebar-contact {
+        max-width: 300px;
+    }
+
+    .cms-downloads {
+        .page-main {
+            margin-bottom: 100px;
+        }
+    }
+}
+
+//
+// Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) { // min 1024
+
+}

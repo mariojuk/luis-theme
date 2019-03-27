@@ -1,0 +1,57 @@
+@import 'components/_mixins.less';
+@import 'components/_common.less';
+@import 'components/_responsive-extend.less';
+@import 'components/_header.less';
+@import 'components/_buttons.less';
+@import 'components/_footer.less';
+@import 'components/_homepage.less';
+@import 'components/_branches.less';
+@import 'components/_branches-widget.less';
+@import 'components/_category.less';
+@import 'components/_faq.less';
+@import 'components/_contact.less';
+@import 'components/_cart.less';
+@import 'components/_checkout.less';
+@import 'components/_product-finder.less';
+@import 'components/_cms_advantages.less';
+@import 'components/_cms_downloads.less';
+@import 'components/_cms_team.less';
+@import 'components/_cms_references-and-case-studies';
+@import 'components/_jobs';
+@import 'components/_about-us.less';
+@import 'components/_quality-policy.less';
+
+//
+// Common
+// ___________________________________
+& when (@media-common = true) {
+
+}
+
+//
+// Mobile
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { // max 767
+
+}
+
+//
+// Tablet
+// ___________________________________
+.media-width(@minBreak, @maxBreak) when (@minBreak = @screen__m) and (@maxBreak = @screen__l) { // 768 - 1023
+
+}
+
+//
+// Tablet / Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { // min 768
+
+}
+
+//
+// Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) { // min 1024
+
+}

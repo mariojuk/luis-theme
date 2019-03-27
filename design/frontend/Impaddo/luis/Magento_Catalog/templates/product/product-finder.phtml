@@ -1,0 +1,413 @@
+<div id="tabs">
+    <ul class="form-steps">
+        <li class="active">
+            <a href="#tabs-1" class="form-steps-item">
+                <div class="form-steps-item-content">
+                    <span class="form-steps-item-icon">1</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#tabs-2" class="form-steps-item">
+                <div class="form-steps-item-content">
+                    <span class="form-steps-item-icon">2</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#tabs-3" class="form-steps-item">
+                <div class="form-steps-item-content">
+                    <span class="form-steps-item-icon">3</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#tabs-4" class="form-steps-item">
+                <div class="form-steps-item-content">
+                    <span class="form-steps-item-icon">4</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#tabs-5" class="form-steps-item">
+                <div class="form-steps-item-content">
+                    <span class="form-steps-item-icon">5</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#tabs-6" class="form-steps-item">
+                <div class="form-steps-item-content">
+                    <span class="form-steps-item-icon">6</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    <form id="product-finder">
+        <div class="tab-pane" id="tabs-1">
+            <div class="tab-heading">
+                <span>Einsatzbereich</span>
+            </div>
+            <div class="tab-subheading">
+                <span>Für welchen Einsatzbereich suchen Sie ein Produkt?</span>
+            </div>
+            <div class="branches-widget">
+                <div class="branches-widget-wrapper">
+                    <div class="branches-widget-content">
+                        <div class="branche-single">
+                            <div class="branche-single-text"><span>01</span>Logistik</div>
+                            <div class="branche-single-image">
+                                <img class="svg"
+                                     src="<?php echo $this->getViewFileUrl('images/icons/luis_sector_logistics.svg'); ?>"
+                                     alt=""/>
+                            </div>
+                            <input type="checkbox" name="branche1" value="Logistik">
+                        </div>
+                        <div class="branche-single">
+                            <div class="branche-single-text"><span>02</span>Kommunal</div>
+                            <div class="branche-single-image">
+                                <img class="svg"
+                                     src="<?php echo $this->getViewFileUrl('images/icons/luis_sector_communal.svg'); ?>"
+                                     alt=""/>
+                            </div>
+                            <input type="checkbox" name="branche2" value="Kommunal">
+                        </div>
+                        <div class="branche-single">
+                            <div class="branche-single-text"><span>03</span>Agrar</div>
+                            <div class="branche-single-image">
+                                <img class="svg"
+                                     src="<?php echo $this->getViewFileUrl('images/icons/luis_sector_agricultural.svg'); ?>"
+                                     alt=""/>
+                            </div>
+                            <input type="checkbox" name="branche3" value="Agrar">
+                        </div>
+                        <div class="branche-single">
+                            <div class="branche-single-text"><span>04</span>Bau</div>
+                            <div class="branche-single-image">
+                                <img class="svg"
+                                     src="<?php echo $this->getViewFileUrl('images/icons/luis_sector_construction.svg'); ?>"
+                                     alt=""/>
+                            </div>
+                            <input type="checkbox" name="branche4" value="Bau">
+                        </div>
+                        <div class="branche-single">
+                            <div class="branche-single-text"><span>05</span>Personenverkehr</div>
+                            <div class="branche-single-image">
+                                <img class="svg"
+                                     src="<?php echo $this->getViewFileUrl('images/icons/luis_sector_passenger-services.svg'); ?>"
+                                     alt=""/>
+                            </div>
+                            <input type="checkbox" name="branche5" value="Personenverkehr">
+                        </div>
+                        <div class="branche-single">
+                            <div class="branche-single-text"><span>06</span>Camping</div>
+                            <div class="branche-single-image">
+                                <img class="svg"
+                                     src="<?php echo $this->getViewFileUrl('images/icons/luis_sector_camping.svg'); ?>"
+                                     alt=""/>
+                            </div>
+                            <input type="checkbox" name="branche6" value="Camping">
+                        </div>
+                        <div class="branche-single">
+                            <div class="branche-single-text"><span>07</span>Pkw</div>
+                            <div class="branche-single-image">
+                                <img class="svg"
+                                     src="<?php echo $this->getViewFileUrl('images/icons/luis_sector_automobile.svg'); ?>"
+                                     alt=""/>
+                            </div>
+                            <input type="checkbox" name="branche7" value="Pkw">
+                        </div>
+                        <div class="branche-single">
+                            <div class="branche-single-text"><span>08</span>Nautic</div>
+                            <div class="branche-single-image">
+                                <img class="svg"
+                                     src="<?php echo $this->getViewFileUrl('images/icons/luis_sector_nautic.svg'); ?>"
+                                     alt=""/>
+                            </div>
+                            <input type="checkbox" name="branche8" value="Nautic">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tabs-2">
+            <div class="tab-heading">
+                <span>Kamera-Anzahl</span>
+            </div>
+            <div class="tab-info">
+                <div class="tab-info-image">
+                    <img src="<?php echo $this->getViewFileUrl('images/product-finder/product_finder_1.jpg'); ?>"
+                         alt="">
+                </div>
+                <div class="tab-info-text">
+                    <p>Die Sicherheitsausstattung landwirtschaftlicher Maschinen muss vielfältigen Anforderungen gerecht
+                        werden. Ob auf dem Feld, dem Hofgelände oder unterwegs auf der Landstraße, ob auf dem
+                        Mähdrescher, dem Traktor oder dem Häcksler, hier bildet ein zuverlässiger Überblick das Maß
+                        aller Dinge. Genau den sichern die LUIS Kamerasysteme, die einen breiten Blickwinkel mit den
+                        Vorzügen einer Bildschirmtechnologie kombinieren, die sichtbar macht, was sonst verborgen
+                        bliebe.</p>
+                </div>
+            </div>
+            <div class="tab-subheading">
+                <span>Wie viele Kameras möchten Sie an einem Fahrzeug anschließen?</span>
+            </div>
+            <div class="tab-checkbox-group">
+                <label class="checkbox-label" for="cam-number-1">1
+                    <input type="checkbox" name="cam-number-1" value="1">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="checkbox-label" for="cam-number-2">2
+                    <input type="checkbox" name="cam-number-2" value="2">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="checkbox-label" for="cam-number-3">3
+                    <input type="checkbox" name="cam-number-3" value="3">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="checkbox-label" for="cam-number-4">4
+                    <input type="checkbox" name="cam-number-4" value="4">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="checkbox-label" for="cam-number-5">360-Grad-System
+                    <input type="checkbox" name="cam-number-5" value="5">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+        <div class="tab-pane" id="tabs-3">
+            <div class="tab-heading">
+                <span>Shutter hinzufügen</span>
+            </div>
+            <div class="tab-info">
+                <div class="tab-info-image">
+                    <img src="<?php echo $this->getViewFileUrl('images/product-finder/product_finder_2.jpg'); ?>"
+                         alt="">
+                </div>
+                <div class="tab-info-text">
+                    <p>Die Sicherheitsausstattung landwirtschaftlicher Maschinen muss vielfältigen Anforderungen gerecht werden. Ob auf dem Feld, dem Hofgelände oder unterwegs auf der Landstraße, ob auf dem Mähdrescher, dem Traktor oder dem Häcksler, hier bildet ein zuverlässiger Überblick das Maß aller Dinge. Genau den sichern die LUIS Kamerasysteme, die einen breiten Blickwinkel mit den Vorzügen einer Bildschirmtechnologie kombinieren, die sichtbar macht, was sonst verborgen bliebe.</p>
+                </div>
+            </div>
+            <div class="tab-subheading">
+                <span>Möchten Sie Kameras mit Shutter (Abdeckklappe) einsetzen?</span>
+            </div>
+            <div class="tab-checkbox-group">
+                <label class="checkbox-label" for="cam-shutter-1">JA
+                    <input type="checkbox" name="cam-shutter-1" value="1">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="checkbox-label" for="cam-shutter-2">NEIN
+                    <input type="checkbox" name="cam-shutter-2" value="2">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+        <div class="tab-pane" id="tabs-4">
+            <div class="tab-heading">
+                <span>Datenübertragung</span>
+            </div>
+            <div class="tab-info">
+                <div class="tab-info-image">
+                    <img src="<?php echo $this->getViewFileUrl('images/product-finder/product_finder_3.jpg'); ?>"
+                         alt="">
+                </div>
+                <div class="tab-info-text">
+                    <p>Die Sicherheitsausstattung landwirtschaftlicher Maschinen muss vielfältigen Anforderungen gerecht werden. Ob auf dem Feld, dem Hofgelände oder unterwegs auf der Landstraße, ob auf dem Mähdrescher, dem Traktor oder dem Häcksler, hier bildet ein zuverlässiger Überblick das Maß aller Dinge. Genau den sichern die LUIS Kamerasysteme, die einen breiten Blickwinkel mit den Vorzügen einer Bildschirmtechnologie kombinieren, die sichtbar macht, was sonst verborgen bliebe.</p>
+                </div>
+            </div>
+            <div class="tab-subheading">
+                <span>Welche Art von Datenübertragung bevorzugen Sie?</span>
+            </div>
+            <div class="tab-checkbox-group">
+                <label class="checkbox-label" for="cam-connection-1">Kabel
+                    <input type="checkbox" name="cam-connection-1" value="1">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="checkbox-label" for="cam-connection-2">Funk
+                    <input type="checkbox" name="cam-connection-2" value="2">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="checkbox-label" for="cam-connection-3">Wifi (mit App)
+                    <input type="checkbox" name="cam-connection-3" value="3">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+        <div class="tab-pane" id="tabs-5">
+            <div class="tab-heading">
+                <span>Bilddarstellung</span>
+            </div>
+            <div class="tab-info">
+                <div class="tab-info-image">
+                    <img src="<?php echo $this->getViewFileUrl('images/product-finder/product_finder_1.jpg'); ?>"
+                         alt="">
+                </div>
+                <div class="tab-info-text">
+                    <p>Die Sicherheitsausstattung landwirtschaftlicher Maschinen muss vielfältigen Anforderungen gerecht werden. Ob auf dem Feld, dem Hofgelände oder unterwegs auf der Landstraße, ob auf dem Mähdrescher, dem Traktor oder dem Häcksler, hier bildet ein zuverlässiger Überblick das Maß aller Dinge. Genau den sichern die LUIS Kamerasysteme, die einen breiten Blickwinkel mit den Vorzügen einer Bildschirmtechnologie kombinieren, die sichtbar macht, was sonst verborgen bliebe..</p>
+                </div>
+            </div>
+            <div class="tab-subheading">
+                <span>Welche Art von Bilddarstellung bevorzugen Sie?</span>
+            </div>
+            <div class="tab-checkbox-wrapper">
+                <div class="tab-checkbox-group tab-checkbox-group-vertical">
+                    <label class="checkbox-label" for="cam-image-1">3,5-Zoll Monitor
+                        <span>Überblick ist das Maß aller Dinge</span>
+                        <input type="checkbox" name="cam-image-1" value="1">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-label" for="cam-image-2">7-Zoll Monitor
+                        <span>Überblick ist das Maß aller Dinge</span>
+                        <input type="checkbox" name="cam-image-2" value="2">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-label" for="cam-image-3">9-Zoll Monitor
+                        <span>Überblick ist das Maß aller Dinge</span>
+                        <input type="checkbox" name="cam-image-3" value="3">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-label" for="cam-image-4">10-Zoll Monitor
+                        <span>Überblick ist das Maß aller Dinge</span>
+                        <input type="checkbox" name="cam-image-4" value="4">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-label" for="cam-image-5">Kein Monitor benötigt
+                        <span>Überblick ist das Maß aller Dinge</span>
+                        <input type="checkbox" name="cam-image-5" value="5">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="tab-checkbox-group tab-checkbox-group-vertical">
+                    <label class="checkbox-label" for="cam-image-6">Darstellung auf Boardsystem MAN
+                        <input type="checkbox" name="cam-image-6" value="6">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-label" for="cam-image-7">Darstellung auf Boardsystem Volvo
+                        <input type="checkbox" name="cam-image-7" value="7">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-label" for="cam-image-8">Darstellung auf Boardsystem DAF
+                        <input type="checkbox" name="cam-image-8" value="8">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-label" for="cam-image-9">Darstellung auf Boardsystem Mercedes
+                        <input type="checkbox" name="cam-image-9" value="9">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tabs-6">
+            <div class="tab-heading">
+                <span>Shutter hinzufügen</span>
+            </div>
+            <div class="tab-info">
+                <div class="tab-info-image">
+                    <img src="<?php echo $this->getViewFileUrl('images/product-finder/product_finder_2.jpg'); ?>"
+                         alt="">
+                </div>
+                <div class="tab-info-text">
+                    <p>Die Sicherheitsausstattung landwirtschaftlicher Maschinen muss vielfältigen Anforderungen gerecht werden. Ob auf dem Feld, dem Hofgelände oder unterwegs auf der Landstraße, ob auf dem Mähdrescher, dem Traktor oder dem Häcksler, hier bildet ein zuverlässiger Überblick das Maß aller Dinge. Genau den sichern die LUIS Kamerasysteme, die einen breiten Blickwinkel mit den Vorzügen einer Bildschirmtechnologie kombinieren, die sichtbar macht, was sonst verborgen bliebe.</p>
+                </div>
+            </div>
+            <div class="tab-subheading">
+                <span>Benötigen Sie einen Anhängerkabelsatz mit Strom- und Datenübertragung?</span>
+            </div>
+            <div class="tab-checkbox-group">
+                <label class="checkbox-label" for="cam-cable-1">JA
+                    <input type="checkbox" name="cam-cable-1" value="1">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="checkbox-label" for="cam-cable-2">NEIN
+                    <input type="checkbox" name="cam-cable-2" value="2">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+        <div class="actions-primary">
+            <a href="#" class="btn-custom btn-custom-small orange" id="prevBtn" disabled="disabled"><span><?= /* @escapeNotVerified */ __('Previous') ?></span></a>
+            <a href="#" class="btn-custom btn-custom-small" id="countBtn"><span>23 Produkte Anzeigen</span></a>
+            <a href="#" class="btn-custom orange btn-custom-small" id="nextBtn"><span><?= /* @escapeNotVerified */ __('Next') ?></span></a>
+        </div>
+        <div class="pf-loader">
+            <img src="<?php echo $this->getViewFileUrl('images/product-finder/loader-1.gif'); ?>"
+                 alt="">
+        </div>
+    </form>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'jquery/ui'], function ($) {
+
+        // Initialize jQuery UI Tabs
+        $('#tabs').tabs({
+            hide: { effect: "slide", duration: 200, easing: "easeInOutQuart" },
+            show: { effect: "slide", duration: 200, easing: "easeInOutQuart" }
+        });
+
+        // Form steps 'active' class toggle
+        $(".form-steps-item").click(function () {
+            $(".form-steps li").removeClass("active");
+            $(this).parent('li').addClass("active");
+            $(this).parent('li').prevAll().addClass("active");
+            if ($(".form-steps li:last-of-type").hasClass('active')) {
+                $('#nextBtn').attr('disabled', 'disabled');
+            } else {
+                $('#nextBtn').removeAttr('disabled');
+            }
+            if ((!$(".form-steps li:nth-of-type(2)").hasClass('active'))) {
+                $('#prevBtn').attr('disabled', 'disabled');
+            } else {
+                $('#prevBtn').removeAttr('disabled');
+            }
+        });
+
+        // Product Finder - Step 1 Branches - 'active' class toggle
+        $(".branche-single").click(function () {
+
+            $(this).toggleClass('active');
+
+            var checkBox = $(this).children('input');
+            checkBox.attr('checked') ? checkBox.removeAttr('checked') : checkBox.attr("checked", "checked");
+        });
+
+        // Prev/next buttons functionality
+        $('#nextBtn').on('click', function (e) {
+            e.preventDefault();
+            if (!$(".form-steps li:last-of-type").hasClass('active')) {
+                var i = $("#tabs > ul > li.active").last().index();
+                $("#tabs > ul > li").eq(i + 1).children('a').trigger("click");
+            }
+        });
+
+        $('#prevBtn').on('click', function (e) {
+            e.preventDefault();
+            if ($(".form-steps li:nth-of-type(2)").hasClass('active')) {
+                var i = $("#tabs > ul > li.active").last().index();
+                $("#tabs > ul > li").eq(i - 1).children('a').trigger("click");
+            }
+        });
+
+        $(".checkbox-label .checkmark").click(function () {
+            var checkBox = $(this).prev('input');
+            checkBox.attr('checked') ? checkBox.removeAttr('checked') : checkBox.attr("checked", "checked");
+        });
+
+    });
+</script>
+<script>
+    require([
+        'jquery',
+        'domReady!'], function ($) {
+
+        $('.pf-loader').css('opacity','0');
+        $('.pf-loader').css('display','none');
+
+    });
+</script>
+
+
+
+

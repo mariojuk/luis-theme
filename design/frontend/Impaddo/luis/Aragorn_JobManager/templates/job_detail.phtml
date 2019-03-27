@@ -1,0 +1,44 @@
+<!--<div class="back-to">-->
+<!--    <a href="--><?php //echo $this->getUrl('job'); ?><!--" >< --><?php //echo __(' BACK TO JOB'); ?><!--</a>-->
+<!--</div>-->
+<?php
+
+if (in_array($block->getCurrentStore(), $block->getStores()) ||
+    in_array(0, $block->getStores())):
+$job = $block->getJobDetail();
+?>
+
+    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('jobs-large-image')->toHtml();?>
+
+<div class="job-detail">
+    
+    <div class="other">
+    <div class="jobTopWrap">
+    <div class='jobTitlePart'>
+    <h2><?php echo $job->getPosition(); ?></h2>
+        <ul>
+            <li class="location"><?php echo $job->getLocation(); ?></li>
+            <li class="styleBold"><?php echo date('d.m.Y', strtotime($job->getCreatedAt())); ?></li>
+            <li class="education"><?php echo $job->getEducation(); ?></li>
+        </ul>
+
+        </div>
+        </div>
+        <div class="job-content">
+            <?php echo $job->getDescription(); ?>
+            <div class="action-wrapper">
+                <button class="action btn-custom orange-btn" onclick="location.href = '<?php echo $this->getUrl('job/index/apply') . 'id/' . $job->getID(); ?>'" type="button">
+                    <span><?php echo __('Apply'); ?></span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+   
+</div>
+<?php else: ?>
+    <h2 class="genericFormStyling"><?php echo __('Sorry. The Job isn\'t available for current store.'); ?></h2>
+<?php endif; ?>
+
+
+

@@ -1,0 +1,254 @@
+//
+// Common
+// ___________________________________
+& when (@media-common = true) {
+
+    .branch-image.full-width {
+        img {
+            width: 100%;
+        }
+    }
+
+    .cms-branches {
+        .page-header {
+            background: @color-white;
+
+            .panel.wrapper {
+                background: #f3f3f3;
+            }
+        }
+
+        .page-wrapper {
+            background: #f3f3f3;
+        }
+
+        h1,
+        h4 {
+            letter-spacing: 0.8px;
+            font-family: @font-family__gotham__book;
+        }
+
+        .block-products-list {
+            margin-bottom: 0;
+        }
+    }
+
+    .branche-case-study,
+    .branche-references {
+        .lib-vendor-prefix-display(flex);
+        .lib-vendor-prefix-flex-wrap(wrap);
+        .flex-space-between();
+    }
+
+    .category-image {
+        margin-bottom: 0;
+        position: relative;
+
+        .image {
+            width: 100%;
+        }
+    }
+
+    .actions-toolbar.all-products-link {
+        margin-left: 15px;
+    }
+
+    .branche-reference-heading {
+        font-family: @font-family__bold;
+        font-size: 16px;
+        margin: 25px 0 20px;
+        text-transform: uppercase;
+    }
+
+    //
+    //  Top Features Widget
+    //  ---------------------------------------------
+    .top-features {
+        text-transform: uppercase;
+
+        &-heading {
+            font-size: 12px;
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
+        }
+
+        &-list {
+            padding-left: 30px;
+            list-style-type: none;
+
+            li {
+                margin-bottom: 25px;
+                font-size: 16px;
+                position: relative;
+
+                &:before {
+                    color: @orange__main;
+                    font-size: 12px;
+                    left: -30px;
+                    top: 4px;
+                    position: absolute;
+                }
+            }
+        }
+    }
+
+    //
+    //  Heading Embed Video
+    //  ---------------------------------------------
+    .cms-branches {
+        .video-container {
+            background-color: @gray__secondary;
+            position:relative;
+            padding-bottom: 40%;
+            height:0;
+            overflow:hidden;
+        }
+
+        .video-container iframe, .video-container object, .video-container embed {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:95.1%;
+        }
+    }
+
+
+}
+
+//
+// Mobile
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { // max 767
+
+    .cms-branches {
+        .flex-container {
+            .lib-vendor-prefix-flex-direction(column);
+
+        }
+
+        .top-features {
+            &-heading {
+                margin-bottom: 20px;
+            }
+
+            &-list {
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .branche-case-study {
+            &-image {
+                margin-bottom: 10px;
+            }
+        }
+
+        .column.main {
+            h4 {
+                margin-bottom: 20px;
+            }
+        }
+
+        .product-list-widget {
+            padding-top: 50px;
+
+            .block-products-list {
+                .block-title {
+                    margin-bottom: 50px;
+                }
+            }
+        }
+
+        .all-products-link {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+//
+// Tablet
+// ___________________________________
+.media-width(@minBreak, @maxBreak) when (@minBreak = @screen__m) and (@maxBreak = @screen__l) { // 768 - 1023
+    .cms-branches {
+        .branche-info {
+            width: 50%;
+        }
+
+        .top-features {
+            width: 40%;
+        }
+    }
+}
+
+//
+// Tablet / Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { // min 768
+    .cms-branches {
+        .custom-slider {
+            padding: 0;
+        }
+
+        .page-title {
+            margin-top: 110px;
+        }
+
+        h1,
+        h4 {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .column.main {
+            p {
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .cms-page-view .page-title-wrapper .page-title {
+            margin-bottom: 40px;
+        }
+    }
+
+    .branche-info {
+        margin-bottom: 80px;
+    }
+
+    .branche-case-study {
+        margin-bottom: 80px;
+
+        &-image {
+            width: 32%;
+        }
+
+        &-text {
+            width: 66%;
+        }
+    }
+
+    .branche-reference {
+        margin-bottom: 80px;
+        width: 32%;
+    }
+
+    .all-products-link {
+        margin-bottom: 110px;
+    }
+}
+
+//
+// Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) { // min 1024
+    .branche-info {
+        width: 62%;
+    }
+
+    .top-features {
+        width: 34%;
+    }
+}

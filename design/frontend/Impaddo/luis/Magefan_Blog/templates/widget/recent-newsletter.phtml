@@ -1,0 +1,90 @@
+<?php
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog recent posts widget
+ *
+ * @var $block \Magefan\Blog\Block\Widget\Recent
+ */
+?>
+
+<?php
+$_postCollection = $block->getPostCollection();
+?>
+<?php if ($_postCollection->count()) { ?>
+    <div class="news-widget-wrapper full-width">
+        <div class="news-widget-content">
+            <div class="post-list-wrapper blog-widget-recent">
+                <div class="post-list flex-container">
+                    <?php foreach ($_postCollection as $_post) { ?>
+                        <?php
+                        $_postUrl = $_post->getPostUrl();
+                        $_postName = $block->escapeHtml($_post->getTitle(), null, true);
+                        ?>
+                        <div class="post-list-item post-holder-<?php echo $_post->getId() ?>">
+
+                            <div class="post-info clear">
+                                <?php if ($_categoriesCount = $_post->getCategoriesCount()) { ?>
+                                    <div class="dash">|</div>
+                                    <div class="item post-categories">
+                                        <span class="label"><?php echo __('Categories:') ?></span>
+                                        <?php $n = 0;
+                                        foreach ($_post->getParentCategories() as $ct) {
+                                            $n++; ?>
+                                            <a title="<?php echo $block->escapeHtml($ct->getTitle()) ?>"
+                                               href="<?php echo $ct->getCategoryUrl() ?>"><?php echo $block->escapeHtml($ct->getTitle()) ?></a>
+                                            <?php if ($n != $_categoriesCount) { ?>, <?php } ?>
+                                        <?php } ?>
+                                    </div>
+                                <?php } ?>
+                            </div>
+
+
+                            <div class="post-content">
+                                <div class="post-description">
+                                    <?php if ($featuredImage = $_post->getFeaturedImage()) { ?>
+                                        <img src="<?php echo $featuredImage ?>" class="post-image">
+                                    <?php } ?>
+                                    <div class="post-title-holder clearfix">
+                                        <div class="post-title">
+                                            <h2 class="mp-post-title" data-mh="mp-post-title">
+                                                <?php echo $_postName; ?>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="post-short-description" data-mh="post-short-description">
+                                        <?php echo $block->getShorContent($_post) ?>
+                                        <a class="post-item-link btn-custom-small"
+                                           href="<?php echo $_postUrl ?>">
+                                            <span>Read more</span>
+                                        </a>
+                                    </div>
+                                </img>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } ?>
+
+<script type="text/javascript">
+    require(["jquery","matchheight"], function ($) {
+        // Matchheight
+        $('.post-list-wrapper.blog-widget-recent').matchHeight(
+            {
+                byRow: true,
+                property: 'height',
+                target: null,
+                remove: false
+            }
+        );
+    });
+</script>

@@ -1,0 +1,34 @@
+<?php
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog post info template
+ *
+ * @var $block \Magefan\Blog\Block\Post\Info
+ */
+?>
+
+<?php $_post = $block->getPost() ?>
+
+<div class="post-info">
+    <?php if ($block->authorEnabled()) { ?>
+        <?php if ($_author = $_post->getAuthor()) { ?>
+            <div class="item post-author">
+                <i class="fa fa-user"></i>
+                <span class="value">
+                    <?php echo $block->escapeHtml($_author->getTitle()) ?>
+                </span>
+            </div>
+        <?php } ?>
+    <?php } ?>
+    <div class="item post-posed-date">
+        <i class="fa fa-clock-o"></i>
+        <span class="value"><?php echo $_post->getPublishDate('F d, Y') ?></span>
+    </div>
+</div>
